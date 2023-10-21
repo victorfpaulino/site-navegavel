@@ -6,6 +6,7 @@
 #titulo_index, #titulo_moba, #titulo_mmorpg, #titulo_fps, #titulo_cardgames {
     font-size: 50px;
     text-align: center;
+    color: rgb(54,90, 109);
 }
 
 
@@ -29,14 +30,14 @@ nav li {
 nav a {
     text-decoration: none; 
     padding: 5px 10px; 
-    border: 1px solid #333;
-    background-color: #333; 
+    border: 1px solid rgb(54,90, 109);
+    background-color: rgb(54,90, 109); 
     color: #fff; 
     border-radius: 5px;
 }
 
 nav a:hover {
-    background-color: #555;
+    background-color: rgb(80,129, 160);
 }
 
 .conteudo_lol_dota {
@@ -71,7 +72,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #f0f0f0;
     color: #000000;
     padding: 10px;
     text-align: center;
