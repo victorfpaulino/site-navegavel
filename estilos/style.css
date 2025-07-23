@@ -1,79 +1,220 @@
+/* Reset básico */
 * {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#titulo_index, #titulo_moba, #titulo_mmorpg, #titulo_fps, #titulo_cardgames {
-    font-size: 50px;
-    text-align: center;
-    color: rgb(54,90, 109);
+body {
+    background: linear-gradient(135deg, #e0e7ef 0%, #b3c6e0 100%);
+    min-height: 100vh;
+    color: #2d3a4a;
+    display: flex;
+    flex-direction: column;
 }
 
+header {
+    width: 100%;
+    background: rgba(54,90,109,0.98);
+    box-shadow: 0 2px 8px rgba(54,90,109,0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: background 0.3s;
+    animation: slideDown 1s cubic-bezier(.39,.575,.565,1) both;
+}
+
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+main {
+    flex: 1;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 8px 32px 8px;
+}
 
 nav {
-    text-align: center; 
-    margin-top: 15px;
+    text-align: center;
+    padding: 18px 0 10px 0;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: inline-block; 
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
 }
 
 nav li {
-    display: inline-block; 
-    margin-right: 10px; 
+    display: inline-block;
 }
 
 nav a {
-    text-decoration: none; 
-    padding: 5px 10px; 
-    border: 1px solid rgb(54,90, 109);
-    background-color: rgb(54,90, 109); 
-    color: #fff; 
-    border-radius: 5px;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #4e6e8e 60%, #6fa1c7 100%);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.08rem;
+    box-shadow: 0 2px 8px rgba(54,90,109,0.10);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    border: none;
+    outline: none;
+    position: relative;
 }
 
-nav a:hover {
-    background-color: rgb(80,129, 160);
+nav a.active, nav a:hover {
+    background: linear-gradient(90deg, #6fa1c7 0%, #4e6e8e 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 16px rgba(54,90,109,0.13);
+}
+
+nav a.active {
+    box-shadow: 0 0 0 3px #b3c6e0;
+    border: 2px solid #fff;
+    z-index: 1;
+}
+
+h1[id^="titulo_"] {
+    font-size: 2.7rem;
+    text-align: center;
+    color: #365a6d;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #b3c6e0;
+}
+
+#conteudo_index, #conteudo_moba, #conteudo_mmorpg, #conteudo_fps, #conteudo_cardgames {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(54,90,109,0.10);
+    padding: 32px 28px;
+    max-width: 800px;
+    margin: 0 auto 32px auto;
+    animation: fadeIn 1.2s cubic-bezier(.39,.575,.565,1) both;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+p, ol, ul, li {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+ol, ul {
+    margin-left: 24px;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(54,90,109,0.10);
+    margin: 12px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+img:hover {
+    transform: scale(1.04) rotate(-1deg);
+    box-shadow: 0 6px 24px rgba(54,90,109,0.18);
 }
 
 .conteudo_lol_dota {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 24px;
+    margin: 18px 0;
 }
-
-.texto_lol_dota {
-    flex: 1;
-    padding: 10px;
+.texto_lol_dota, .imagem_lol_dota {
+    flex: 1 1 260px;
 }
-
 .imagem_lol_dota {
-    flex: 1;
     text-align: center;
 }
 
-table {
-    border-collapse: collapse;
-    width: 12%;
-    margin: 0 auto;
+#imagens_mmorpg, #imagens_fps, #imagens_cardgames {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin: 18px 0;
 }
 
+#tabela_moba table, table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 18px 0;
+    background: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(54,90,109,0.07);
+}
 th, td {
-    border: 1px solid #000;
-    padding: 8px;
-    text-align: left; 
+    border: 1px solid #b3c6e0;
+    padding: 10px 16px;
+    text-align: left;
+}
+th {
+    background: #e0e7ef;
+    color: #365a6d;
+}
+td {
+    color: #2d3a4a;
 }
 
 footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    background-color: #f0f0f0;
-    color: #000000;
-    padding: 10px;
+    background: rgba(54,90,109,0.98);
+    color: #fff;
+    padding: 18px 0 12px 0;
     text-align: center;
-  }
+    font-size: 1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 -2px 8px rgba(54,90,109,0.08);
+    margin-top: auto;
+    animation: slideUp 1s cubic-bezier(.39,.575,.565,1) both;
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 700px) {
+    main {
+        margin-top: 70px;
+        padding: 12px 2px 24px 2px;
+    }
+    #conteudo_index, #conteudo_moba, #conteudo_mmorpg, #conteudo_fps, #conteudo_cardgames {
+        padding: 18px 6px;
+    }
+    h1[id^="titulo_"] {
+        font-size: 2rem;
+    }
+    nav ul {
+        gap: 8px;
+    }
+    nav a {
+        padding: 7px 10px;
+        font-size: 0.98rem;
+    }
+    .conteudo_lol_dota {
+        flex-direction: column;
+    }
+    #imagens_mmorpg, #imagens_fps, #imagens_cardgames {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
